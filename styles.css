@@ -1,0 +1,387 @@
+/* Reset and general styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Header styles */
+header {
+  background-color: #f4f4f4;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #6187ad;
+}
+
+nav ul li a.active {
+  color: #6187ad;
+  font-weight: bold;
+}
+
+
+/* Sticky header styles */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #f4f4f4;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(51, 47, 47, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #5a7ea1;
+}
+
+.logo a,
+nav ul li a {
+  font-weight: normal;
+  background-color: transparent;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+      display: block;
+  }
+
+  .nav-list {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #f4f4f4;
+      text-align: center;
+  }
+
+  .nav-list.active {
+      display: block;
+  }
+
+  .nav-list li {
+      margin: 1rem 0;
+  }
+
+  .sticky-header {
+      flex-wrap: wrap;
+  }
+}
+
+/* Style the section separator */
+.section-separator {
+  width: 70%;
+  max-width: 300px;
+  height: 1px;
+  background-color: #ccc;
+  margin: 2rem auto;
+}
+
+/* Main content styles */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 2rem;
+}
+
+.hero-section {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('images/background-image.jpg');
+  /* background-image: linear-gradient(); */
+  filter: saturate(100%);
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Home section styles */
+#home {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+
+.social-links a {
+  margin: 0 10px;
+  font-size: 20px;
+  color: #0c0c0c;
+}
+
+.social-links a:hover {
+  color: #366175;
+}
+
+
+/* Projects section styles */
+#projects h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+
+.project-item {
+  max-width: 300px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f4;
+  transition: transform 0.3s ease;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.project-item img {
+  width: 300px;
+  height: 200px;
+  border-radius: 8px 8px 0 0;
+}
+
+.project-hover {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-item:hover .project-hover {
+  display: flex;
+  opacity: 1;
+}
+
+.project-hover p {
+  padding: 1rem;
+  text-align: center;
+}
+
+.view-more {
+  text-align: center;
+  margin: 20px auto 0;
+  width: 100%;
+}
+
+
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* Projects page styles */
+.project {
+  display: flex;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.project-media {
+  flex: 1;
+}
+
+.project-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.project-media img:hover {
+  transform: scale(1.05);
+}
+
+.project-info {
+  flex: 2;
+}
+
+.project-info h3 {
+  margin-bottom: 1rem;
+}
+
+.project-links {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-links a {
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.project-links img {
+  height: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure the section titles are centered */
+#data-analytics h2,
+#data-science h2,
+#data-engineering h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+
+/* About Me section styles */
+#about {
+  padding: 4rem 2rem;
+}
+
+.about-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  width: 330px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.about-text {
+  flex: 1;
+  overflow: hidden;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  margin-top: 2rem;
+}
