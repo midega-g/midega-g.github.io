@@ -361,7 +361,7 @@ main {
 }
 
 .about-image {
-  width: auto;
+  width: 300px;
   height: auto;
   border-radius: 10px;
   margin-right: 2rem;
