@@ -302,13 +302,17 @@ main {
 
 /* Projects page styles */
 .project {
-  display: flex;
   margin-bottom: 3rem;
-  gap: 2rem;
 }
 
-.project-media {
-  flex: 1;
+.project-title {
+  margin-bottom: 1rem;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .project-media img {
@@ -320,10 +324,6 @@ main {
 
 .project-media img:hover {
   transform: scale(1.05);
-}
-
-.project-info {
-  flex: 2;
 }
 
 .project-info h3 {
@@ -346,6 +346,22 @@ main {
   height: 20px;
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query for screens wider than 700px */
+@media (min-width: 701px) {
+  .project-content {
+    flex-direction: row;
+  }
+
+  .project-media {
+    flex: 1;
+    margin-right: 2rem;
+  }
+
+  .project-info {
+    flex: 2;
+  }
 }
 
 /* Ensure the section titles are centered */
