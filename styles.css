@@ -110,8 +110,21 @@ nav ul li a {
       top: 60px;
       left: 0;
       width: 100%;
-      background-color: #f4f4f4;
+      background-color: #f1eeee;
       text-align: center;
+  }
+
+  .nav-list li a {
+    display: block;
+    padding: 1rem;  
+    width: 100%;    
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .nav-list li a:hover {
+    background-color: #4e5861; 
+    color: white;
   }
 
   .nav-list.active {
@@ -119,7 +132,7 @@ nav ul li a {
   }
 
   .nav-list li {
-      margin: 1rem 0;
+      margin: 0;
   }
 
   .sticky-header {
