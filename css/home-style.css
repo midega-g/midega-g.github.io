@@ -30,7 +30,7 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #080808bb;
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
@@ -119,7 +119,6 @@ footer {
   text-align: center;
   padding: 1rem 0;
   color: white;
-  background-color: rgba(0,0,0, 0.7);
 }
 
 /* Responsive Design */
