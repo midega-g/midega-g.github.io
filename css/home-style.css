@@ -13,7 +13,7 @@ html {
 
 /* Layout */
 .background {
-  background-image: url('../_images/background-image.jpg');
+  background-image: url('../images/background-image.jpg');
   background-size: cover;
   background-position: center;
   height: 100%;
