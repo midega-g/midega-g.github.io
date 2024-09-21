@@ -1,0 +1,155 @@
+
+/* General Resets */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Layout */
+.background {
+  background-image: url('../_images/background-image.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  min-height: 0;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Profile Section */
+.profile {
+  text-align: center;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+}
+
+.profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/* Link Section */
+.links {
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 2rem 0;
+}
+
+.link-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.link-item i {
+  margin-right: 2rem;
+}
+
+.link-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Footer Section */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  color: white;
+  background-color: rgba(0,0,0, 0.7);
+}
+
+/* Responsive Design */
+
+@media (max-height: 950px) {
+
+  .profile {
+    margin-top: 20rem;
+  }
+  
+  .profile img {
+    width: 100px;
+    height: 100px;
+  }
+
+}
+
+
+/* Media query for screens wider than 700px */
+@media (min-width: 701px) {
+  .project-content {
+    flex-direction: row;
+  }
+
+  .project-media {
+    flex: 1;
+    margin-right: 2rem;
+  }
+
+  .project-info {
+    flex: 2;
+  }
+}
