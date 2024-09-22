@@ -76,24 +76,19 @@ nav ul li a.active {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
-.logo a {
-  color: #333;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.logo-image {
+  width: 48px;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.logo a:hover {
-  color: #5a7ea1;
-}
-
-.logo a,
-nav ul li a {
-  font-weight: normal;
-  background-color: transparent;
+.logo-image:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
 .hamburger-menu {
@@ -111,42 +106,42 @@ nav ul li a {
 
 @media (max-width: 700px) {
   .hamburger-menu {
-      display: block;
+    display: block;
   }
 
   .nav-list {
-      display: none;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: #f1eeee;
-      text-align: center;
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #f1eeee;
+    text-align: center;
   }
 
   .nav-list li a {
     display: block;
-    padding: 1rem;  
-    width: 100%;    
+    padding: 1rem;
+    width: 100%;
     text-align: center;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   .nav-list li a:hover {
-    background-color: #4e5861; 
+    background-color: #4e5861;
     color: white;
   }
 
   .nav-list.active {
-      display: block;
+    display: block;
   }
 
   .nav-list li {
-      margin: 0;
+    margin: 0;
   }
 
   .sticky-header {
-      flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 
@@ -212,42 +207,42 @@ nav ul li a {
 
 @media (max-width: 700px) {
   .hamburger-menu {
-      display: block;
+    display: block;
   }
 
   .nav-list {
-      display: none;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: #f1eeee;
-      text-align: center;
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #f1eeee;
+    text-align: center;
   }
 
   .nav-list li a {
     display: block;
-    padding: 1rem;  
-    width: 100%;    
+    padding: 1rem;
+    width: 100%;
     text-align: center;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   .nav-list li a:hover {
-    background-color: #4e5861; 
+    background-color: #4e5861;
     color: white;
   }
 
   .nav-list.active {
-      display: block;
+    display: block;
   }
 
   .nav-list li {
-      margin: 0;
+    margin: 0;
   }
 
   .sticky-header {
-      flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 
