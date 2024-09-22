@@ -67,15 +67,4 @@ $(document).ready(function () {
 
     // Update year dynamically
     $('#current-year').text(new Date().getFullYear());
-
-    // jQuery version of the link click effect
-    $('.link-item').on('click', function(e) {
-        e.preventDefault();
-        var $this = $(this);
-        $this.css('transform', 'scale(0.95)');
-        setTimeout(function() {
-            $this.css('transform', 'scale(1)');
-            window.location = $this.attr('href');
-        }, 100);
-    });
 });
