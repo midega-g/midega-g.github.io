@@ -126,14 +126,8 @@ footer {
 @media (max-height: 950px) {
 
   .profile {
-    margin-top: 20rem;
+    margin-top: 30rem;
   }
-  
-  /* .profile img {
-    width: 180px;
-    height: 180px;
-  } */
-
 }
 
 
