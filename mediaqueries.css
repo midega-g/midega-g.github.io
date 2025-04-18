@@ -10,10 +10,17 @@
         margin-bottom: 3rem;
     }
 
-    about-containers {
+    /* about-containers {
         flex-wrap: wrap;
+    } */
+}
+
+@media (max-width: 1320px) {
+    .wrapper-projects-page {
+        max-width: 1050px;
     }
 }
+
 
 @media screen and (max-width: 1200px) {
     #desktop-nav {
@@ -43,6 +50,10 @@
 
     .my-logo-img {
         height: 50px;
+    }
+
+    .navback-projects-page {
+        top: 100px;
     }
 
     #experience,
@@ -82,10 +93,6 @@
         margin-bottom: 50px;
     }
 
-    .about-containers {
-        margin-top: 0;
-    }
-
     #contact {
         margin-top: 50px;
 
@@ -96,7 +103,6 @@
         margin-bottom: 50px;
     }
 }
-
 
 @media screen and (max-width: 600px) {
 
@@ -109,20 +115,24 @@
         height: 10vh;
     }
 
+    .navback-projects-page {
+        top: 110px;
+    }
+
     footer nav {
         height: fit-content;
         margin-bottom: 2rem;
     }
 
-    .about-containers,
+    /* .about-containers, */
     .contact-info-upper-container,
     .btn-container {
         flex-wrap: wrap;
     }
 
-    .about-containers {
+    /* .about-containers {
         display: grid;
-    }
+    } */
 
     .contact-info-container {
         margin: 0;

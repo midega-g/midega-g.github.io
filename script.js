@@ -1,70 +1,78 @@
-function smoothScroll(target) {
-    $('html, body').animate({
-        scrollTop: $(target).offset().top - 100
-    }, 100);
+
+// Hamburger Toggle
+function toggleMenu() {
+  const icon = document.querySelector(".hamburger-icon");
+  const menu = document.querySelector(".menu-links");
+  icon.classList.toggle("open");
+  menu.classList.toggle("open");
 }
 
-$(document).ready(function () {
-    var heroSection = $('.hero-section');
-    var heroSectionHeight = heroSection.height();
-    var header = $('.sticky-header');
-    var headerHeight = header.height();
-    var currentPage = window.location.pathname.split("/").pop();
 
-    // Sticky header on scroll
-    $(window).scroll(function () {
-        var scroll = $(window).scrollTop();
+// Close Hamburger Menu on Outside Click
+document.addEventListener("click", function (event) {
+  const menu = document.querySelector(".menu-links");
+  const icon = document.querySelector(".hamburger-icon");
+  const hamburgerMenu = document.querySelector(".hamburger-menu");
 
-        if (scroll > heroSectionHeight + headerHeight) {
-            header.css('transform', 'translateY(-100%)');
-        } else {
-            header.css('transform', 'translateY(0)');
-        }
-    });
+  // Check if the menu is open and the click is outside the hamburger menu
+  if (menu.classList.contains("open") && !hamburgerMenu.contains(event.target)) {
+    menu.classList.remove("open");
+    icon.classList.remove("open");
+  }
+});
 
-    // Smooth scroll for internal links
-    $('nav a').on('click', function (e) {
-        var target = $(this).attr('href');
-        if (target.startsWith('#')) {
-            e.preventDefault();
-            smoothScroll(target);
-        } else if (target === 'index.html') {
-            e.preventDefault();
-            window.location.href = 'index.html';
-        }
-    });
 
-    // Add 'active' class to the current page link
-    $('nav ul li a').each(function () {
-        var linkPage = $(this).attr('href');
-        if (currentPage === linkPage || (currentPage === "" && linkPage === "index.html")) {
-            $(this).addClass('active');
-        }
-    });
+// Scroll Behavior for Both Navbars
+let prevScrollpos = window.pageYOffset;
+const desktopNav = document.getElementById("desktop-nav");
+const hamburgerNav = document.getElementById("hamburger-nav");
 
-    // Toggle hamburger menu
-    $('.hamburger-menu').on('click', function () {
-        $('.nav-list').toggleClass('active');
-        $(this).toggleClass('active');
-    });
+window.onscroll = function() {
+    const currentScrollPos = window.pageYOffset;
 
-    // Close menu when a link is clicked
-    $('.nav-list a').on('click', function () {
-        $('.nav-list').removeClass('active');
-        $('.hamburger-menu').removeClass('active');
-    });
+    // Desktop Navbar
+    if (prevScrollpos > currentScrollPos) {
+        desktopNav.style.top = "0";
+    } else {
+        desktopNav.style.top = `-${desktopNav.offsetHeight}px`;
+    }
 
-    // Close menu when clicking outside
-    $(document).on('click', function (event) {
-        if (!$(event.target).closest('.sticky-header').length) {
-            $('.nav-list').removeClass('active');
-            $('.hamburger-menu').removeClass('active');
-        }
-    });
+    // Hamburger Navbar
+    if (prevScrollpos > currentScrollPos) {
+        hamburgerNav.style.top = "0";
+    } else {
+        hamburgerNav.style.top = `-${hamburgerNav.offsetHeight}px`;
+    }
 
-    // Remove any previous scroll event listeners
-    $(window).off('scroll');
+    prevScrollpos = currentScrollPos;
+};
 
-    // Update year dynamically
-    $('#current-year').text(new Date().getFullYear());
+
+// Card switch functionality
+var swiper = new Swiper(".mySwiper", {
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 300,
+    modifier: 2,
+    slideShadows: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
+
+
+// Update year dynamically
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("current-year").textContent = new Date().getFullYear();
 });

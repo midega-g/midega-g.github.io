@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100%;
+            margin: 0;
+            font-size: 16px;
+            background-color: #f4f4f9;
+        }
+
+        /* Desktop Navbar */
+        #desktop-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 20;
+        }
+
+        .my-logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Hamburger Navbar */
+        #hamburger-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index: 20;
+        }
+
+        .hamburger-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .hamburger-menu {
+            position: relative;
+        }
+
+        .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .hamburger-icon span {
+            background: #333;
+            height: 3px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .menu-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #fff;
+            width: 200px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-links.active {
+            display: block;
+        }
+
+        .menu-links li {
+            margin: 1rem 0;
+        }
+
+        .menu-links a {
+            text-decoration: none;
+            color: #333;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1rem;
+        }
+
+        .menu-links a:hover {
+            color: #3498db;
+        }
+
+        /* Navback Projects Page */
+        .navback-projects-page {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: fixed;
+            top: 60px; /* Below navbar */
+            left: 20px;
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .navback-projects-page.hidden {
+            transform: translateY(-100px);
+        }
+
+        .navback-projects-page .back-button {
+            color: #3498db;
+            text-decoration: none;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .navback-projects-page .back-button:hover,
+        .navback-projects-page .back-button:active {
+            color: #3498db;
+        }
+
+        .navback-projects-page .back-button:hover::after,
+        .navback-projects-page .back-button:active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #3498db;
+        }
+
+        .navback-projects-page .nav-back-button {
+            color: #333;
+            text-decoration: none;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1rem;
+        }
+
+        /* Project Cards */
+        h3 {
+            margin: 0 0 15px;
+            font-size: 28px;
+            line-height: 36px;
+            font-family: "Fredoka", sans-serif;
+            letter-spacing: 3px;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 8rem 2rem 4rem;
+            gap: 30px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .item {
+            width: 400px;
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            background: #343434 no-repeat center center / cover;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+        }
+
+        .item:hover {
+            width: 450px;
+            box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .item::after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+        }
+
+        .desc {
+            padding: 0 24px 12px;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transform: translateY(calc(100% - 54px));
+            transition: all 0.4s ease-in-out;
+        }
+
+        .item:hover .desc {
+            transform: none;
+        }
+
+        .desc p {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: all 0.4s ease-in-out 0.2s;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-family: "Montserrat", sans-serif;
+            font-size: 15px;
+        }
+
+        .item:hover .desc p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .desc .buttons {
+            display: flex;
+            gap: 10px;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out 0.2s;
+        }
+
+        .item:hover .desc .buttons {
+            opacity: 1;
+        }
+
+        .desc .buttons a {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .desc .buttons a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Media Queries */
+        @media (max-width: 1200px) {
+            .wrapper {
+                max-width: 1000px;
+                padding: 7rem 1.5rem 4rem;
+                gap: 25px;
+            }
+
+            .item {
+                width: 300px;
+                height: 250px;
+            }
+
+            .item:hover {
+                width: 350px;
+            }
+
+            h3 {
+                font-size: 24px;
+                line-height: 32px;
+            }
+
+            .desc p {
+                font-size: 14px;
+            }
+
+            .desc .buttons a {
+                padding: 7px 14px;
+                font-size: 13px;
+            }
+
+            #desktop-nav {
+                display: none;
+            }
+
+            #hamburger-nav {
+                display: block;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .wrapper {
+                max-width: 700px;
+                padding: 6rem 1rem 4rem;
+                gap: 20px;
+            }
+
+            .item {
+                width: 280px;
+                height: 220px;
+            }
+
+            .item:hover {
+                width: 320px;
+            }
+
+            h3 {
+                font-size: 22px;
+                line-height: 28px;
+            }
+
+            .desc p {
+                font-size: 13px;
+            }
+
+            .desc .buttons a {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .navback-projects-page {
+                top: 50px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .wrapper {
+                max-width: 400px;
+                padding: 5rem 1rem 4rem;
+                gap: 20px;
+            }
+
+            .item {
+                width: 100%;
+                max-width: 300px;
+                height: 200px;
+            }
+
+            .item:hover {
+                width: 100%;
+                max-width: 340px;
+            }
+
+            h3 {
+                font-size: 20px;
+                line-height: 26px;
+            }
+
+            .desc p {
+                font-size: 12px;
+            }
+
+            .desc .buttons a {
+                padding: 5px 10px;
+                font-size: 11px;
+            }
+
+            .navback-projects-page {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navback-projects-page {
+                gap: 8px;
+                left: 15px;
+            }
+
+            .navback-projects-page .back-button,
+            .navback-projects-page .nav-back-button {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Desktop Navbar -->
+    <nav id="desktop-nav">
+        <div class="my-logo">
+            <a href="/">
+                <img src="../assets/my-logo.webp" alt="My Logo" class="my-logo-img">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html#projects">Projects & Blogs</a></li>
+            <li><a href="../index.html#experience">Tools & Skills</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hamburger Navbar -->
+    <nav id="hamburger-nav">
+        <div class="hamburger-wrapper">
+            <div class="my-logo">
+                <a href="/">
+                    <img src="../assets/my-logo.webp" alt="My Logo" class="my-logo-img">
+                </a>
+            </div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <li><a href="../index.html#projects" onclick="toggleMenu()">Projects & Blogs</a></li>
+                    <li><a href="../index.html#experience" onclick="toggleMenu()">Tools & Skills</a></li>
+                    <li><a href="../index.html#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="../index.html#contact" onclick="toggleMenu()">Contact</a></li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navback Projects Page -->
+    <div class="navback-projects-page">
+        <a href="../index.html" class="back-button">Home</a>
+        <a href="#" class="nav-back-button">></a>
+        <a href="#top" class="back-button">Analytics</a>
+    </div>
+
+    <!-- Project Cards -->
+    <section class="wrapper" id="top">
+        <div class="item" style="background-image: url(../images/bank-debt-recovery.gif);">
+            <div class="desc">
+                <h3>Bank Debt</h3>
+                <p>Explored 1,882 charged-off accounts to optimize five debt recovery strategies.</p>
+                <div class="buttons">
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiY2QzMWNkYTAtYzE3Ny00YzlmLWI4YmUtZWY5YzcwM2ZmMjczIiwidCI6Ijc0NDczNDI5LTA5ODMtNDg1OS04ZDU5LWJlODRhNzRjZmFkOCJ9" target="_blank">More</a>
+                    <a href="#" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../images/kq-ratings-reviews.gif);">
+            <div class="desc">
+                <h3>Kenya Airways</h3>
+                <p>Analyzed 471 reviews (2011-2024) to identify customer satisfaction pain points.</p>
+                <div class="buttons">
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiY2QzMWNkYTAtYzE3Ny00YzlmLWI4YmUtZWY5YzcwM2ZmMjczIiwidCI6Ijc0NDczNDI5LTA5ODMtNDg1OS04ZDU5LWJlODRhNzRjZmFkOCJ9" target="_blank">More</a>
+                    <a href="https://github.com/Demiga-g/kenya-airways-analytics" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../images/ifood-dashboard.gif);">
+            <div class="desc">
+                <h3>iFood Customers</h3>
+                <p>Analyzed 2014 campaign data to understand customer behavior patterns.</p>
+                <div class="buttons">
+                    <a href="https://public.tableau.com/views/iFood-Marketing-Response/Dashboard3?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank">More</a>
+                    <a href="https://github.com/Demiga-g/customer-response-app" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../images/bank-debt-recovery.gif);">
+            <div class="desc">
+                <h3>Bank Debt</h3>
+                <p>Explored 1,882 charged-off accounts to optimize five debt recovery strategies.</p>
+                <div class="buttons">
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiY2QzMWNkYTAtYzE3Ny00YzlmLWI4YmUtZWY5YzcwM2ZmMjczIiwidCI6Ijc0NDczNDI5LTA5ODMtNDg1OS04ZDU5LWJlODRhNzRjZmFkOCJ9" target="_blank">More</a>
+                    <a href="#" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-links');
+            const icon = document.querySelector('.hamburger-icon');
+            menu.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+
+        // Scroll Behavior for Navback
+        let lastScrollTop = 0;
+        const navback = document.querySelector('.navback-projects-page');
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Scroll down
+                navback.classList.remove('hidden');
+            } else {
+                // Scroll up
+                navback.classList.add('hidden');
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        // Smooth Scroll to Top for Analytics Link
+        document.querySelector('.back-button[href="#top"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
