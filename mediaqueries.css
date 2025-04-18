@@ -9,10 +9,6 @@
         /* height: 70vh; */
         margin-bottom: 3rem;
     }
-
-    /* about-containers {
-        flex-wrap: wrap;
-    } */
 }
 
 @media (max-width: 1320px) {
@@ -20,7 +16,6 @@
         max-width: 1050px;
     }
 }
-
 
 @media screen and (max-width: 1200px) {
     #desktop-nav {
@@ -124,15 +119,11 @@
         margin-bottom: 2rem;
     }
 
-    /* .about-containers, */
     .contact-info-upper-container,
     .btn-container {
         flex-wrap: wrap;
     }
 
-    /* .about-containers {
-        display: grid;
-    } */
 
     .contact-info-container {
         margin: 0;
