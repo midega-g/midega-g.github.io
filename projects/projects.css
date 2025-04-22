@@ -124,7 +124,7 @@ h3 {
     width: 100%;
     left: 0;
     top: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    background-image: linear-gradient(rgba(75, 75, 75, 0), rgb(48, 48, 48));
 }
 
 .desc-projects-page {
@@ -185,18 +185,3 @@ h3 {
     background-color: #333435;
     color: white;
 }
-
-/* .tton {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    color: #3498db;
-    text-decoration: none;
-    font-size: 1rem;
-    font-family: "Montserrat", sans-serif;
-    z-index: 10;
-}
-back-bu
-.back-button:hover {
-    text-decoration: underline;
-} */
