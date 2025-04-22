@@ -9,6 +9,10 @@
         /* height: 70vh; */
         margin-bottom: 3rem;
     }
+
+    #contact {
+        height: 10vh;
+    }
 }
 
 @media (max-width: 1320px) {
@@ -90,7 +94,6 @@
 
     #contact {
         margin-top: 50px;
-
     }
 
     #footer-nav {
