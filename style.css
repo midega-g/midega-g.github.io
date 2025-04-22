@@ -150,7 +150,7 @@ a {
     display: block;
     padding: 10px 15px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     color: black;
     text-decoration: none;
     transition: all 0.3 ease-in-out;
@@ -161,9 +161,10 @@ a {
 }
 
 .menu-links.open {
-    max-height: 300px;
+    max-height: fit-content;
     display: block;
     z-index: 9999;
+    max-width: fit-content;
 }
 
 .menu-links.open li a {
@@ -607,7 +608,7 @@ section {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 55vh;
+    height: 10vh;
 }
 
 .contact-info-upper-container {
