@@ -103,7 +103,7 @@ h3 {
     height: 300px;
     display: flex;
     align-items: flex-end;
-    background: #343434 no-repeat center center / cover;
+    background: #383838 no-repeat center center / cover;
     border-radius: 16px;
     overflow: hidden;
     position: relative;
@@ -113,7 +113,7 @@ h3 {
 
 .item-projects-page:hover {
     width: 350px;
-    box-shadow: 8px 12px 4px rgba(78, 78, 78, 0.25);
+    box-shadow: 6px 6px 4px rgba(59, 59, 59, 0.25);
 }
 
 .item-projects-page::after {
@@ -124,7 +124,7 @@ h3 {
     width: 100%;
     left: 0;
     top: 0;
-    background-image: linear-gradient(rgba(187, 185, 185, 0.055), rgb(29, 28, 28));
+    background-image: linear-gradient(rgba(65, 64, 64, 0.055), rgb(31, 30, 30));
 }
 
 .desc-projects-page {
