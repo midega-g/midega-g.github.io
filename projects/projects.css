@@ -124,7 +124,7 @@ h3 {
     width: 100%;
     left: 0;
     top: 0;
-    background-image: linear-gradient(rgba(65, 64, 64, 0.055), rgb(31, 30, 30));
+    background-image: linear-gradient(rgba(236, 231, 231, 0.05), rgba(39, 39, 39, 0.65));
 }
 
 .desc-projects-page {
