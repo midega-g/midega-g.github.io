@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Disallow orphaned/legacy pages not part of the current site
+Disallow: /_portfolio-v01/
+Disallow: /_portfolio-v02/
+Disallow: /projects/
+
 Sitemap: https://midega-g.github.io/sitemap.xml
