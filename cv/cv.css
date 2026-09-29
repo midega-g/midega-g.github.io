@@ -1,0 +1,228 @@
+/* ===== CV PAGE STYLES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #eef0f3;
+    color: #2b2b2b;
+    line-height: 1.55;
+    padding: 0 0 3rem;
+}
+
+a {
+    color: #5a63c9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Toolbar */
+.cv-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.cv-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.cv-btn-primary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: #fff;
+}
+
+.cv-btn-primary:hover {
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+    transform: translateY(-2px);
+}
+
+.cv-btn-ghost {
+    background: #fff;
+    color: #444;
+    border-color: #d5d8de;
+}
+
+.cv-btn-ghost:hover {
+    text-decoration: none;
+    background: #f4f5f8;
+}
+
+/* Page sheet */
+.cv-page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 3rem 3.2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+/* Header */
+.cv-header {
+    text-align: center;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.6rem;
+}
+
+.cv-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #222;
+}
+
+.cv-role {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #764ba2;
+    margin: 0.2rem 0 0.6rem;
+}
+
+.cv-contact {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Sections */
+.cv-section {
+    margin-bottom: 1.5rem;
+}
+
+.cv-section h2 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #667eea;
+    border-bottom: 1px solid #e3e5ea;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.cv-section p {
+    font-size: 0.92rem;
+    color: #3a3a3a;
+    margin-bottom: 0.5rem;
+}
+
+/* Entries */
+.cv-entry {
+    margin-bottom: 1rem;
+}
+
+.cv-entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.cv-entry-title {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.cv-entry-date {
+    font-size: 0.82rem;
+    color: #777;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.cv-entry ul {
+    padding-left: 1.1rem;
+    margin: 0.2rem 0;
+}
+
+.cv-entry li {
+    font-size: 0.9rem;
+    color: #3a3a3a;
+    margin-bottom: 0.35rem;
+}
+
+/* Certs */
+.cv-certs {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem 1.5rem;
+}
+
+.cv-certs li {
+    font-size: 0.9rem;
+    color: #333;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.cv-certs li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: 700;
+}
+
+.cv-cert-date {
+    color: #888;
+    font-size: 0.82rem;
+}
+
+/* Print */
+@media print {
+    body {
+        background: #fff;
+        padding: 0;
+    }
+    .no-print {
+        display: none !important;
+    }
+    .cv-page {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+        padding: 1.2cm 1.4cm;
+    }
+    .cv-section {
+        page-break-inside: avoid;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .cv-page {
+        padding: 2rem 1.4rem;
+    }
+    .cv-certs {
+        grid-template-columns: 1fr;
+    }
+    .cv-header h1 {
+        font-size: 1.7rem;
+    }
+}

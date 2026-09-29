@@ -7,28 +7,26 @@
     <title>Midega George - Portfolio</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Midega George - Data Analyst, Data Scientist, Data Engineer, and Solutions Architect. Explore my portfolio of data analysis, data science, and data engineering projects.">
-    <meta name="keywords" content="Midega George, Data Analyst, Data Scientist, Data Engineer, Solutions Architect, Portfolio, Python, R, Machine Learning">
+    <meta name="description" content="Midega George - Data & Cloud Engineer and AWS Community Builder. Building scalable data platforms and cloud infrastructure on AWS and Snowflake. Explore my engineering, data, and analytics projects.">
+    <meta name="keywords" content="Midega George, Data Engineer, Cloud Engineer, Solutions Architect, AWS Community Builder, AWS, Snowflake, Terraform, Python, SQL, Portfolio">
     <meta name="author" content="Midega George">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Midega George - Portfolio">
-    <meta property="og:description" content="Data Analyst, Data Scientist, Data Engineer, and Solutions Architect. Explore my portfolio of data projects.">
+    <meta property="og:title" content="Midega George - Data & Cloud Engineer">
+    <meta property="og:description" content="Data & Cloud Engineer and AWS Community Builder. Building scalable data platforms and cloud infrastructure.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://midega-g.github.io">
     <meta property="og:image" content="https://midega-g.github.io/assets/profile-pic.webp">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Midega George - Portfolio">
-    <meta name="twitter:description" content="Data Analyst, Data Scientist, Data Engineer, and Solutions Architect">
+    <meta name="twitter:title" content="Midega George - Data & Cloud Engineer">
+    <meta name="twitter:description" content="Data & Cloud Engineer and AWS Community Builder">
     <meta name="twitter:image" content="https://midega-g.github.io/assets/profile-pic.webp">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="new-styles.css">
-    <link rel="stylesheet" href="mediaqueries.css">
     
 
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
@@ -42,7 +40,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Midega George",
-        "jobTitle": ["Data Analyst", "Data Scientist", "Data Engineer", "Solutions Architect"],
+        "jobTitle": ["Data Engineer", "Cloud Engineer", "Solutions Architect"],
         "url": "https://midega-g.github.io",
         "image": "https://midega-g.github.io/assets/profile-pic.webp",
         "sameAs": [
@@ -50,7 +48,7 @@
             "https://github.com/midega-g",
             "https://medium.com/@midegageorge2"
         ],
-        "knowsAbout": ["Data Analysis", "Data Science", "Data Engineering", "Python", "R", "Machine Learning", "Statistical Analysis"],
+        "knowsAbout": ["Data Engineering", "Cloud Engineering", "AWS", "Snowflake", "Terraform", "Python", "SQL", "ETL", "Solutions Architecture"],
         "alumniOf": {
             "@type": "Organization",
             "name": "University of Nairobi"
@@ -69,6 +67,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#career">Career</a></li>
             <li><a href="#experience">Skills</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#footer">Contact</a></li>
@@ -90,6 +89,7 @@
                 <div class="menu-links">
                     <li><a href="#top" onclick="toggleMenu()">Home</a></li>
                     <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="#career" onclick="toggleMenu()">Career</a></li>
                     <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
                     <li><a href="#about" onclick="toggleMenu()">About</a></li>
                     <li><a href="#footer" onclick="toggleMenu()">Contact</a></li>
@@ -116,15 +116,19 @@
             </h1>
             <div class="wrapper">
                 <ul class="dynamic-txts">
-                    <li><span>Data Analyst</span></li>
-                    <li><span>Data Scientist</span></li>
                     <li><span>Data Engineer</span></li>
+                    <li><span>Cloud Engineer</span></li>
                     <li><span>Solutions Architect</span></li>
+                    <li><span>Data Engineer</span></li>
                 </ul>
             </div>
+            <div class="cb-badge-container">
+                <img src="./assets/aws-community-builder.png" alt="AWS Community Builder" class="cb-badge-img">
+                <span class="cb-badge-label">AWS Community Builder</span>
+            </div>
             <div class="btn_container">
-                <button class="btn btn-color-2" onclick="window.open('https://docs.google.com/document/d/1dJoxNa7-q3lNYGKguFECwMt2dJ6TM4cD5AgRnpLzle8/edit?usp=sharing')">
-                    Download CV
+                <button class="btn btn-color-2" onclick="window.open('./cv/', '_blank')">
+                    Check CV
                 </button>
                 <button class="btn btn-color-1" onclick="location.href='./#footer'">
                     Contact Info
@@ -153,30 +157,90 @@
         
         <div class="filter-tabs">
             <button class="tab-btn active" data-filter="all">All</button>
+            <button class="tab-btn" data-filter="cloud">Cloud / DevOps</button>
+            <button class="tab-btn" data-filter="engineering">Engineering</button>
             <button class="tab-btn" data-filter="analysis">Analysis</button>
             <button class="tab-btn" data-filter="science">Science</button>
-            <button class="tab-btn" data-filter="engineering">Engineering</button>
         </div>
         
         <div class="projects-grid">
-            <article class="project-card" data-category="analysis">
-                <div class="project-image">
-                    <img src="./assets/aws_heroes.png" alt="AWS Heroes Visualization">
-                </div>
+            <article class="project-card" data-category="cloud">
                 <div class="card-content">
-                    <h3>AWS Heroes Visualization</h3>
-                    <p>Global representation of AWS Heroes community with interactive dashboards</p>
+                    <h3>AWS Organization Infrastructure</h3>
+                    <p>Terraform-managed multi-account AWS Organization: OUs, SCPs, CloudTrail, IAM Identity Center, and GitHub OIDC CI/CD with gitleaks + checkov security gates.</p>
                     <div class="tech-stack">
-                        <span>Power BI</span>
-                        <span>Data Viz</span>
+                        <span>Terraform</span>
+                        <span>AWS Organizations</span>
+                        <span>CI/CD</span>
                     </div>
                     <div class="card-links">
-                        <a href="https://github.com/midega-g/aws-viz" target="_blank">Code</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNDM5YTA2ZTYtMWVhYS00NWEyLWFiNmEtNjQwNGI1OTgzMGU1IiwidCI6Ijc0NDczNDI5LTA5ODMtNDg1OS04ZDU5LWJlODRhNzRjZmFkOCJ9" target="_blank">Live</a>
+                        <a href="https://github.com/midega-g/aws-org-infra" target="_blank">Code</a>
                     </div>
                 </div>
             </article>
-            
+
+            <article class="project-card" data-category="cloud">
+                <div class="card-content">
+                    <h3>Snowflake &times; AWS PrivateLink</h3>
+                    <p>Private connectivity between an AWS VPC and a Snowflake Business Critical account via AWS PrivateLink, with all traffic on the AWS backbone, provisioned with phased Terraform workspaces.</p>
+                    <div class="tech-stack">
+                        <span>AWS PrivateLink</span>
+                        <span>Snowflake</span>
+                        <span>Terraform</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/midega-g/snowflake_aws_privatelink" target="_blank">Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="engineering">
+                <div class="card-content">
+                    <h3>Elites E-Commerce Platform</h3>
+                    <p>Full-stack serverless e-commerce: React/TypeScript frontend and Django REST backend with JWT auth, Axios interceptors, and CI/CD via pre-commit and GitHub Actions.</p>
+                    <div class="tech-stack">
+                        <span>React</span>
+                        <span>Django REST</span>
+                        <span>Serverless</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/midega-g" target="_blank">Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="engineering">
+                <div class="project-image">
+                    <img src="./assets/smoke-detection-workflow.webp" alt="IoT Smoke Detection">
+                </div>
+                <div class="card-content">
+                    <h3>IoT Smoke Detection</h3>
+                    <p>Containerized system with MQTT streaming and real-time monitoring</p>
+                    <div class="tech-stack">
+                        <span>IoT</span>
+                        <span>Docker</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/midega-g/smoke-detection-iot" target="_blank">Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="analysis">
+                <div class="card-content">
+                    <h3>Agulu Ventures Transactions</h3>
+                    <p>Streamlit financial dashboard with authentication and admin tooling for tracking member contributions and MMF transactions, backed by a tested Python pipeline.</p>
+                    <div class="tech-stack">
+                        <span>Streamlit</span>
+                        <span>Python</span>
+                        <span>Finance</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/midega-g" target="_blank">Code</a>
+                    </div>
+                </div>
+            </article>
+
             <article class="project-card" data-category="analysis">
                 <div class="project-image">
                     <img src="./assets/kq-ratings-reviews.gif" alt="Kenya Airways Analytics">
@@ -230,24 +294,25 @@
                     </div>
                 </div>
             </article>
-            
-            <article class="project-card" data-category="engineering">
+
+            <article class="project-card" data-category="analysis">
                 <div class="project-image">
-                    <img src="./assets/smoke-detection-workflow.webp" alt="IoT Smoke Detection">
+                    <img src="./assets/aws_heroes.png" alt="AWS Heroes Visualization">
                 </div>
                 <div class="card-content">
-                    <h3>IoT Smoke Detection</h3>
-                    <p>Containerized system with MQTT streaming and real-time monitoring</p>
+                    <h3>AWS Heroes Visualization</h3>
+                    <p>Global representation of AWS Heroes community with interactive dashboards</p>
                     <div class="tech-stack">
-                        <span>IoT</span>
-                        <span>Docker</span>
+                        <span>Power BI</span>
+                        <span>Data Viz</span>
                     </div>
                     <div class="card-links">
-                        <a href="https://github.com/midega-g/smoke-detection-iot" target="_blank">Code</a>
+                        <a href="https://github.com/midega-g/aws-viz" target="_blank">Code</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNDM5YTA2ZTYtMWVhYS00NWEyLWFiNmEtNjQwNGI1OTgzMGU1IiwidCI6Ijc0NDczNDI5LTA5ODMtNDg1OS04ZDU5LWJlODRhNzRjZmFkOCJ9" target="_blank">Live</a>
                     </div>
                 </div>
             </article>
-            
+
             <article class="project-card" data-category="analysis">
                 <div class="project-image">
                     <img src="./assets/bank-debt-recovery.gif" alt="Debt Recovery Optimization">
@@ -264,25 +329,96 @@
                     </div>
                 </div>
             </article>
-            
-            <article class="project-card" data-category="analysis">
-                <div class="project-image">
-                    <img src="./assets/aws_community_builders.png" alt="AWS Skill Builder Analytics">
+        </div>
+        <div class="projects-toggle-container">
+            <button id="projects-toggle" class="projects-toggle-btn" aria-expanded="false">Show more</button>
+        </div>
+    </section>
+
+    <!-- Career Lineage Section -->
+    <section id="career">
+        <div class="section-header">
+            <h1 class="title">Career</h1>
+            <p class="section-subtitle">The path so far</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Jun 2026 &ndash; Present</span>
+                    <h3>Data &amp; Cloud Engineer</h3>
+                    <span class="timeline-org">Shinrai Limited Technologies</span>
+                    <p>Building and operating cloud-native platforms on AWS: a serverless HRMS (FastAPI, Next.js, Aurora, Cognito, Amplify) provisioned with Terraform, plus a Procure-to-Pay / AP automation solution with OCR and AI/ML-assisted document processing.</p>
                 </div>
-                <div class="card-content">
-                    <h3>AWS Skill Builder Analytics</h3>
-                    <p>Comprehensive analysis of AWS learning patterns and skill development trends</p>
-                    <div class="tech-stack">
-                        <span>Power BI</span>
-                        <span>AWS</span>
-                        <span>Analytics</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://github.com/midega-g/aws-viz" target="_blank">Code</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiMTc4Mzk2NGUtZDdhYS00NWNiLWI5MTAtYTE1MmM3YjFjZGUzIiwidCI6Ijc0NDczNDI5LTA5ODMtNDg1OS04ZDU5LWJlODRhNzRjZmFkOCJ9" target="_blank">Live</a>
-                    </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Mar 2025 &ndash; Dec 2025</span>
+                    <h3>Data Engineer / Analyst</h3>
+                    <span class="timeline-org">AgentsHub Kenya</span>
+                    <p>Designed and maintained ETL pipelines (Python, SQL, Airflow), built star-schema models in PostgreSQL, and delivered dbt transformations and BI dashboards serving 20+ users.</p>
                 </div>
-            </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Aug 2025 &ndash; Present</span>
+                    <h3>ALX AWS Chatroom Ambassador</h3>
+                    <span class="timeline-org">ALX, Kenya</span>
+                    <p>Mentor learners across data and cloud tracks through workshops on SQL, ETL, Airflow, dbt, and BI tools.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Jan 2023 &ndash; Jun 2026</span>
+                    <h3>Freelance Data Engineer / Consultant</h3>
+                    <span class="timeline-org">Remote</span>
+                    <p>Delivered data pipelines, dashboards, and ML prototypes for healthcare and fintech clients.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Sep 2016 &ndash; Sep 2020</span>
+                    <h3>BSc Microbiology &amp; Biotechnology</h3>
+                    <span class="timeline-org">University of Nairobi</span>
+                    <p>Second Class Honours (Upper Division).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="credentials-block">
+            <h2 class="credentials-heading">Certifications</h2>
+            <div class="cert-filter-tabs">
+                <button class="cert-tab-btn active" data-cert-filter="all">All</button>
+                <button class="cert-tab-btn" data-cert-filter="aws">AWS</button>
+                <button class="cert-tab-btn" data-cert-filter="snowflake">Snowflake</button>
+            </div>
+            <div class="cert-badges-grid">
+                <a class="cert-badge" data-provider="aws" href="https://skillsprofile.skillbuilder.aws/user/george-midega/certification-badges" target="_blank" rel="noopener">
+                    <img src="./assets/badges/aws-saa.png" alt="AWS Certified Solutions Architect – Associate badge">
+                    <span class="cert-badge-name">AWS Certified Solutions Architect &ndash; Associate</span>
+                </a>
+                <a class="cert-badge" data-provider="aws" href="https://skillsprofile.skillbuilder.aws/user/george-midega/certification-badges" target="_blank" rel="noopener">
+                    <img src="./assets/badges/aws-ai-practitioner.png" alt="AWS Certified AI Practitioner badge">
+                    <span class="cert-badge-name">AWS Certified AI Practitioner</span>
+                </a>
+                <a class="cert-badge" data-provider="aws" href="https://skillsprofile.skillbuilder.aws/user/george-midega/certification-badges" target="_blank" rel="noopener">
+                    <img src="./assets/badges/aws-cloud-practitioner.png" alt="AWS Certified Cloud Practitioner badge">
+                    <span class="cert-badge-name">AWS Certified Cloud Practitioner</span>
+                </a>
+                <a class="cert-badge" data-provider="snowflake" href="https://achieve.snowflake.com/35e3eb2a-76d3-4359-94f8-847e6e035b19" target="_blank" rel="noopener">
+                    <img src="./assets/badges/snowpro-core.png" alt="SnowPro Core Certification badge">
+                    <span class="cert-badge-name">SnowPro Core Certification</span>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -376,32 +512,32 @@
             <div class="about-content">
                 <div class="about-header">
                     <h1 class="title">About</h1>
-                    <p class="intro-line">Data artisan crafting insights from chaos.</p>
+                    <p class="intro-line">Data &amp; Cloud Engineer building platforms that turn data into outcomes.</p>
                 </div>
                 <div class="about-text">
                     
-                    <p>With 3+ years navigating the data landscape, I've architected pipelines, 
-                    tamed messy datasets, and deployed production-ready AI/ML models across diverse domains. 
-                    My expertise spans healthcare analytics, financial modeling, agricultural tech, 
-                    and intelligent automation solutions for 15+ clients.</p>
+                    <p>I design and operate cloud-native data platforms: scalable ETL/ELT pipelines,
+                    infrastructure-as-code on AWS, and analytics models with dbt and Snowflake. Recently
+                    I've built a production serverless HRMS and an AP-automation solution end to end,
+                    from Terraform-provisioned infrastructure to FastAPI services and CI/CD.</p>
                     
-                    <p>My freelance writing experience with 90+ clients across 5 continents has cultivated 
-                    exceptional communication skills, disciplined time management, and a strong sense of 
-                    ownership—qualities that translate directly into delivering reliable, client-focused 
-                    data solutions.</p>
+                    <p>As an AWS Community Builder, I stay close to the ecosystem and share what I learn,
+                    mentoring data and cloud learners and writing about the practices behind reliable,
+                    well-governed systems. My earlier work spans analytics and ML, which I still bring to
+                    bear when a problem calls for it.</p>
                     
                     <div class="about-stats">
                         <div class="stat-item">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">AWS &amp; Snowflake Certifications</span>
+                        </div>
+                        <div class="stat-item">
                             <span class="stat-number">3+</span>
-                            <span class="stat-label">Years Experience</span>
+                            <span class="stat-label">Years in Data &amp; Cloud</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">90+</span>
-                            <span class="stat-label">Global Clients</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">5</span>
-                            <span class="stat-label">Continents</span>
+                            <span class="stat-number">AWS</span>
+                            <span class="stat-label">Community Builder</span>
                         </div>
                     </div>
                     
@@ -420,16 +556,17 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Midega George</h3>
-                <p>Data Artisan crafting insights from chaos</p>
+                <p>Data &amp; Cloud Engineer &middot; AWS Community Builder</p>
             </div>
             
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#career">Career</a></li>
                     <li><a href="#experience">Skills</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#footer">Contact</a></li>
                 </ul>
             </div>
             
@@ -461,35 +598,108 @@
     </footer>
 
     <script>
-        // New project filtering
+        // Projects: filtering + show more/less (single collapsed row on desktop)
         document.addEventListener('DOMContentLoaded', function() {
             const tabBtns = document.querySelectorAll('.tab-btn');
-            const projectCards = document.querySelectorAll('.project-card');
-            
+            const projectCards = Array.from(document.querySelectorAll('.project-card'));
+            const toggleBtn = document.getElementById('projects-toggle');
+            const toggleContainer = document.querySelector('.projects-toggle-container');
+
+            let currentFilter = 'all';
+            let expanded = false;
+
+            // How many cards make up the first row at the current viewport width.
+            function cardsPerRow() {
+                const w = window.innerWidth;
+                if (w > 900) return 3;   // desktop: 3-column grid
+                if (w > 600) return 2;   // tablet: 2-column grid
+                return 2;                // mobile: show 2 before collapsing
+            }
+
+            function matchingCards() {
+                return projectCards.filter(card =>
+                    currentFilter === 'all' || card.dataset.category === currentFilter);
+            }
+
+            function render() {
+                const matches = matchingCards();
+                const limit = cardsPerRow();
+
+                // Hide non-matching cards; show matching ones subject to collapse.
+                projectCards.forEach(card => { card.style.display = 'none'; });
+
+                matches.forEach((card, i) => {
+                    card.style.display = (expanded || i < limit) ? 'block' : 'none';
+                });
+
+                // Toggle button visibility + label.
+                if (matches.length > limit) {
+                    toggleContainer.classList.remove('is-hidden');
+                    toggleBtn.textContent = expanded ? 'Show less' : 'Show more';
+                    toggleBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                } else {
+                    toggleContainer.classList.add('is-hidden');
+                }
+            }
+
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
-                    const filter = this.dataset.filter;
-                    
-                    // Update active button
+                    currentFilter = this.dataset.filter;
+                    expanded = false; // reset to collapsed on filter change
                     tabBtns.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
-                    
-                    // Filter projects
-                    projectCards.forEach(card => {
-                        if (filter === 'all' || card.dataset.category === filter) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
+                    render();
                 });
             });
+
+            toggleBtn.addEventListener('click', function() {
+                expanded = !expanded;
+                render();
+                if (!expanded) {
+                    document.getElementById('projects').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+
+            // Re-evaluate collapse when the row size changes across breakpoints.
+            let lastPerRow = cardsPerRow();
+            window.addEventListener('resize', function() {
+                const now = cardsPerRow();
+                if (now !== lastPerRow) {
+                    lastPerRow = now;
+                    render();
+                }
+            });
+
+            render();
         });
         
         function toggleTheme() {
             document.body.classList.toggle('dark-mode');
             localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
         }
+
+        // Certification badge filtering by provider
+        document.addEventListener('DOMContentLoaded', function() {
+            const certTabs = document.querySelectorAll('.cert-tab-btn');
+            const certBadges = document.querySelectorAll('.cert-badge');
+
+            certTabs.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.dataset.certFilter;
+
+                    certTabs.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    certBadges.forEach(badge => {
+                        if (filter === 'all' || badge.dataset.provider === filter) {
+                            badge.classList.remove('cert-hidden');
+                        } else {
+                            badge.classList.add('cert-hidden');
+                        }
+                    });
+                });
+            });
+        });
         
         // Load saved theme on page load
         document.addEventListener('DOMContentLoaded', function() {

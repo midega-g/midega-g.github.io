@@ -1839,3 +1839,295 @@ body.dark-mode .about-header .intro-line {
 body.dark-mode #desktop-nav {
     border-bottom: 1px solid #444;
 }
+
+/* ===== AWS COMMUNITY BUILDER BADGE (HERO) ===== */
+.cb-badge-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.cb-badge-img {
+    height: 2.6rem;
+    width: auto;
+}
+
+.cb-badge-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    letter-spacing: 0.3px;
+}
+
+body.dark-mode .cb-badge-label {
+    color: #ddd;
+}
+
+/* ===== CAREER LINEAGE TIMELINE ===== */
+#career {
+    margin-bottom: 6rem;
+    padding: 2rem 0;
+}
+
+.timeline {
+    position: relative;
+    max-width: 820px;
+    margin: 0 auto 3rem;
+    padding-left: 1rem;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(180deg, #667eea, #764ba2);
+}
+
+.timeline-item {
+    position: relative;
+    padding: 0 0 2rem 2.2rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.timeline-content {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-date {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.2rem;
+}
+
+.timeline-org {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #764ba2;
+    margin-bottom: 0.6rem;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+/* ===== CERTIFICATION BADGES ===== */
+.credentials-block {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.credentials-heading {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.cert-filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.cert-tab-btn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #333;
+    background: transparent;
+    color: #333;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+.cert-tab-btn:hover,
+.cert-tab-btn.active {
+    background: #333;
+    color: #fff;
+}
+
+.cert-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.cert-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    max-width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.cert-badge:hover {
+    transform: translateY(-6px);
+    text-decoration: none;
+}
+
+.cert-badge img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.cert-badge:hover img {
+    transform: scale(1.06);
+}
+
+.cert-badge-name {
+    margin-top: 0.9rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #444;
+    line-height: 1.4;
+}
+
+.cert-badge.cert-hidden {
+    display: none;
+}
+
+/* Dark mode: cert filter + badges */
+body.dark-mode .cert-tab-btn {
+    border-color: #fff;
+    color: #fff;
+}
+
+body.dark-mode .cert-tab-btn:hover,
+body.dark-mode .cert-tab-btn.active {
+    background: #fff;
+    color: #1a1a1a;
+}
+
+body.dark-mode .credentials-heading {
+    color: #fff;
+}
+
+body.dark-mode .cert-badge-name {
+    color: #ddd;
+}
+
+/* Dark mode: career timeline */
+body.dark-mode .timeline-content {
+    background: #2d2d2d;
+    border-color: #444;
+}
+
+body.dark-mode .timeline-dot {
+    background: #2d2d2d;
+}
+
+body.dark-mode .timeline-content h3 {
+    color: #fff;
+}
+
+body.dark-mode .timeline-content p {
+    color: #ccc;
+}
+
+body.dark-mode .timeline-date {
+    color: #8ea2f7;
+}
+
+body.dark-mode .timeline-org {
+    color: #b28ee0;
+}
+
+/* Responsive: timeline */
+@media screen and (max-width: 600px) {
+    .timeline-content h3 {
+        font-size: 1.05rem;
+    }
+    .credentials-grid {
+        grid-template-columns: 1fr;
+    }
+    .cb-badge-label {
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== PROJECTS SHOW MORE / LESS ===== */
+.projects-toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.projects-toggle-btn {
+    padding: 0.6rem 1.8rem;
+    border: 1px solid #333;
+    background: transparent;
+    color: #333;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: inherit;
+}
+
+.projects-toggle-btn:hover {
+    background: #333;
+    color: #fff;
+}
+
+.projects-toggle-container.is-hidden {
+    display: none;
+}
+
+body.dark-mode .projects-toggle-btn {
+    border-color: #fff;
+    color: #fff;
+}
+
+body.dark-mode .projects-toggle-btn:hover {
+    background: #fff;
+    color: #1a1a1a;
+}
