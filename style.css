@@ -483,11 +483,31 @@ section {
 }
 
 
+.mySwiper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 2.5rem auto 0;
+    /* Reserve space at the bottom so pagination dots never overlap the cards */
+    padding-bottom: 4.5rem;
+    overflow: hidden;
+}
+
 .swiper-wrapper {
     width: 100%;
     height: auto;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    height: auto;
+    /* Give coverflow a bounded slide box so the card is always contained */
+    width: 500px;
+    max-width: 90vw;
+    box-sizing: border-box;
 }
 
 .swiper-slide:not(.swiper-slide-active) {
@@ -495,7 +515,7 @@ section {
 }
 
 .card {
-    width: 90%;
+    width: 100%;
     max-width: 500px;
     background-color: #fff;
     border-radius: 1em;
@@ -504,7 +524,11 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     margin: 1em auto;
+    /* Equal-height cards so shorter slides don't let neighbours overlap the dots */
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .experience-sub-title {
@@ -537,6 +561,42 @@ section {
 .logo-img:hover {
     transform: scale(1.1);
     filter: grayscale(0%);
+}
+
+/* Swiper pagination: sit below the cards in reserved space, never overlapping */
+.mySwiper .swiper-pagination {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: normal;
+}
+
+.mySwiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #c7c7c7;
+    opacity: 1;
+    margin: 0 !important;
+    transition: all 0.3s ease;
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+    width: 26px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+body.dark-mode .mySwiper .swiper-pagination-bullet {
+    background: #555;
+}
+
+body.dark-mode .mySwiper .swiper-pagination-bullet-active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 /* PROJECT SECTION */
@@ -1664,6 +1724,27 @@ body.dark-mode .closing-line {
 }
 
 @media screen and (max-width: 600px) {
+    .mySwiper {
+        padding-bottom: 3.5rem;
+    }
+
+    .swiper-slide {
+        width: 300px;
+        max-width: 82vw;
+    }
+
+    .card {
+        padding: 1.25em 1em;
+    }
+
+    .logo-container {
+        gap: 0.75em;
+    }
+
+    .logo-img {
+        width: 48px;
+    }
+
     footer {
         height: 30vh;
     }
